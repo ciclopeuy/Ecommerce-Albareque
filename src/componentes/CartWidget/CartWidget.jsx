@@ -5,7 +5,7 @@ const CartWidget = () => {
     return (
         <>
             <div class="d-flex justify-content-center align-items-center" >
-                <FiShoppingCart variant="dark" />
+                <FiShoppingCart />
                 <p>+1</p>
             </div>
         </>

@@ -5,9 +5,9 @@ import NavBar from "./componentes/NavBar/NavBar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-dark" >
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer className="m-2" />
     </div>
   );
 }
