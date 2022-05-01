@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App bg-dark" >
       <NavBar />
-      <ItemListContainer className="m-2" />
+      <ItemListContainer />
     </div>
   );
 }

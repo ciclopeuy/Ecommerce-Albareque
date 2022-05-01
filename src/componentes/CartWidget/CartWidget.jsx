@@ -4,9 +4,9 @@ import { FiShoppingCart } from "react-icons/fi";
 const CartWidget = () => {
     return (
         <>
-            <div class="d-flex justify-content-center align-items-center" >
-                <FiShoppingCart />
-                <p>+1</p>
+            <div className="d-flex justify-content-center align-items-center" >
+                <FiShoppingCart style={{ color: "white" }} />
+                <p style={{ color: "white" }}>+1</p>
             </div>
         </>
 

@@ -5,7 +5,7 @@ import CartWidget from "../CartWidget/CartWidget";
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="info" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="danger">
       <Container>
         <Navbar.Brand href="#home">MIENTRADA.UY</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

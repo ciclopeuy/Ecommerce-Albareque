@@ -15,8 +15,6 @@ const ItemCount = () => {
 
     }
 
-
-
     function restar() {
 
         if (contador > 1) {
@@ -28,21 +26,6 @@ const ItemCount = () => {
 
 
     return (
-        // <div
-        //     style={{
-        //         display: "flex",
-        //         margin: "40px 0",
-        //         width: "500px",
-        //         justifyContent: "space-around",
-        //     }}
-        // >
-        //     <button onClick={restar}>-</button>
-        //     <h2>Productos agregados : {contador}</h2>
-        //     <h2>Stock Disponible: {stock}</h2>
-
-        //     <button onClick={sumar}>+</button>
-
-        // </div>
 
         <Card style={{ width: '20rem' }}>
             <Card.Img variant="top" src="https://tickantel.cdn.antel.net.uy/media/Espectaculo/40010864/GORILLAZ_TICKANTEL_700X390.jpg" />
@@ -55,9 +38,10 @@ const ItemCount = () => {
                     Nathy Peluso: 20:30
                     Gorillaz: 22:00
                 </Card.Text>
+                <Card.Text className='lead text-danger' > <i>Precio: $ 2500</i> </Card.Text>
 
-                <Button className='m-2' onClick={sumar} variant="danger">+</Button>
-                <Button className='m-2' onClick={restar} variant="danger">-</Button>
+                <Button onClick={restar} variant="dark">-</Button>
+                <Button className='m-2' onClick={sumar} variant="dark">+</Button>
                 <Card.Text> <i>Cantidad- {contador} - Disponibles : {stock}</i></Card.Text>
             </Card.Body>
         </Card>
