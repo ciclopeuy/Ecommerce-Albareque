@@ -1,32 +1,10 @@
-import React, { useState } from 'react'
-import { Card, Button } from 'react-bootstrap'
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import ItemCount from '../ItemCount/ItemCount';
 
+const Item = ({ data }) => {
 
-const Item = ({ id, evento, descripcion, precio, stock, imagen }) => {
-    const [contador, setContador] = useState(1)
-    const [stockreal, setStockreal] = useState({ stock } - contador)
-
-
-    function sumar() {
-        if (stockreal > 0) {
-            setContador(contador + 1)
-            setStockreal(stockreal - 1)
-        }
-
-    }
-
-    function restar() {
-
-        if (contador > 1) {
-
-            setContador(contador - 1)
-            setStockreal(stockreal + 1)
-        }
-    }
-
-
-
-
+    const { descripcion, precio, imagen, evento, } = data;
 
     return (
 
@@ -37,11 +15,8 @@ const Item = ({ id, evento, descripcion, precio, stock, imagen }) => {
                 <Card.Text className='lead'>
                     {descripcion}
                 </Card.Text>
-                <Card.Text className='lead text-danger' > <i>{precio}</i> </Card.Text>
-
-                <Button onClick={restar} variant="dark">-</Button>
-                <Button className='m-2' onClick={sumar} variant="dark">+</Button>
-                <Card.Text> <i>Cantidad- {contador} - Disponibles : {stockreal}</i></Card.Text>
+                <Card.Text className='lead text-danger' > <i>Precio en $ {precio}</i> </Card.Text>
+                <ItemCount data={{ stock: data.stock }} />
             </Card.Body>
         </Card>
 
