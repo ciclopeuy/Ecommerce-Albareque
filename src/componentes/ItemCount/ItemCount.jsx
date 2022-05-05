@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
+import { data } from '../../config';
 
 
 const ItemCount = ({ data }) => {
@@ -36,8 +37,8 @@ const ItemCount = ({ data }) => {
     return (
 
         <>
-            <Button onClick={restar} variant="dark">-</Button>
-            <Button className='m-2' onClick={sumar} variant="dark">+</Button>
+            <Button className='m-1' onClick={sumar} variant="dark"> + </Button>
+            <Button className='m-1' onClick={restar} variant="dark"> - </Button>
             <p> <i>Entradas Seleccionadas - {contador} - Disponibles : {stockReal}</i></p>
 
         </>

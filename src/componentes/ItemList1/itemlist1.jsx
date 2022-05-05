@@ -1,6 +1,6 @@
 import React from 'react'
 import Item from '../Item/Item'
-
+import { data } from '../../config';
 
 
 
@@ -13,7 +13,7 @@ const itemlist1 = ({ eventos }) => {
                     data={evento}
                 />)
             ) : (
-                <h1>Cargando Eventos...</h1>
+                <h5 className='text-warning'>Cargando Eventos...</h5>
             )}
         </div>
     );

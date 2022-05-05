@@ -1,10 +1,15 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
+import { data } from '../../config';
 
 const Item = ({ data }) => {
 
-    const { descripcion, precio, imagen, evento, } = data;
+    const { id, fecha, sala, precio, imagen, evento, key, stock } = data;
+
+
+
 
     return (
 
@@ -12,13 +17,14 @@ const Item = ({ data }) => {
             <Card.Img variant="top" src={imagen} />
             <Card.Body>
                 <Card.Title className='display-6 text-danger' >{evento}</Card.Title>
-                <Card.Text className='lead'>
-                    {descripcion}
-                </Card.Text>
-                <Card.Text className='lead text-danger' > <i>Precio en $ {precio}</i> </Card.Text>
-                <ItemCount data={{ stock: data.stock }} />
+                <Card.Text className='lead'>{fecha} en <i>{sala}</i></Card.Text>
+                <Card.Text className='lead text-danger' > <i>Entradas desde $ {precio}</i> </Card.Text>
+                <ItemCount data={{ stock }} />
+                <Link to={`/ItemDetail/${id}`}><Button className='m-1' variant="dark"> + Detalles </Button></Link>
+                {/* <link to={`/ItemDetail/${id}`}>+ detalles</link> */}
             </Card.Body>
-        </Card>
+
+        </Card >
 
     )
 }
