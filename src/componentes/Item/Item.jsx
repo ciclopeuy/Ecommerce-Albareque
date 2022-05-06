@@ -2,11 +2,11 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
-import { data } from '../../config';
+// import { data } from '../../config';
 
 const Item = ({ data }) => {
 
-    const { id, fecha, sala, precio, imagen, evento, key, stock } = data;
+    const { id, fecha, sala, precio, imagen, evento, stock } = data;
 
 
 

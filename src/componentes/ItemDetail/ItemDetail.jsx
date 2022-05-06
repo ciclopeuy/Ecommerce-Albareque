@@ -1,6 +1,5 @@
 import React from 'react'
 import { } from 'react-bootstrap'
-import { data } from '../../config'
 // import ItemCount from '../ItemCount/ItemCount'
 
 

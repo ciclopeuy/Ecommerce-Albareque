@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
-import { data } from '../../config';
+// import { data } from '../../config';
 
 
 const ItemCount = ({ data }) => {
