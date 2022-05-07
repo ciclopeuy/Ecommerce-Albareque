@@ -31,8 +31,8 @@ const ItemDetailContainer = () => {
 
     return (
 
-        <div className='justify-content m-2'>
-            {eventos ? <ItemDetail eventos={eventos} /> : <h5>Cargando...</h5>}
+        <div className='justify-content m-4'>
+            {eventos ? <ItemDetail eventos={eventos} /> : <h5 className='text-warning'>Cargando Evento Seleccionado...</h5>}
         </div>
 
 

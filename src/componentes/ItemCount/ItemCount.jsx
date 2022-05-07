@@ -37,8 +37,8 @@ const ItemCount = ({ data }) => {
     return (
 
         <>
-            <Button className='m-1' onClick={sumar} variant="dark"> + </Button>
-            <Button className='m-1' onClick={restar} variant="dark"> - </Button>
+            <Button className='m-1' onClick={restar} variant="outline-dark"> - </Button>
+            <Button className='m-1' onClick={sumar} variant="outline-dark"> + </Button>
             <p> <i>Entradas Seleccionadas - {contador} - Disponibles : {stockReal}</i></p>
 
         </>
