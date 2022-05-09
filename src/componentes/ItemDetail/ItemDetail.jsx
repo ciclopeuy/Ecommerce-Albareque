@@ -1,5 +1,7 @@
 import React from 'react'
-import { } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import ItemCount from '../ItemCount/ItemCount'
 // import ItemCount from '../ItemCount/ItemCount'
 
 
@@ -12,7 +14,11 @@ const ItemDetail = ({ eventos }) => {
                 <div className="row g-0">
                     <div className="col-md-6">
                         <img src={eventos.imagen} className="img-fluid rounded-start" alt="..." />
+                        <Link className='text-decoration-none' to={`/${eventos.categoria}`}>
+                            <Card.Text className=' text-light bg-danger' > {eventos.categoria} </Card.Text>
+                        </Link>
                     </div>
+
                     <div className="col-md-6">
                         <div className="card-body">
                             <h5 className="display-6 text-danger">{eventos.evento}</h5>
@@ -20,7 +26,7 @@ const ItemDetail = ({ eventos }) => {
 
                             <p className="lead">{eventos.descripcion}</p>
                             <h5 className=" lead text-danger"> <i>Entradas desde $ {eventos.precio}</i> </h5>
-                            {/* <ItemCount data={{ stock: data.stock }} /> */}
+                            <ItemCount data={{ stock: eventos.stock }} />
 
                         </div>
                     </div>

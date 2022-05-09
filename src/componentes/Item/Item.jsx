@@ -13,18 +13,18 @@ const Item = ({ data }) => {
 
     return (
 
-        <Card className="m-3 p-1 " style={{ width: '25rem' }}>
+        <Card className="card m-3 p-1 container-fluid col-md-6" style={{ width: '25rem' }}>
             <Card.Img variant="top" src={imagen} />
-            <Card.Text className=' text-light bg-danger' > {categoria} </Card.Text>
+            <Link className='text-decoration-none' to={`/${categoria}`}>
+                <Card.Text className=' text-light bg-danger' > {categoria} </Card.Text>
+            </Link>
             <Card.Body>
                 <Card.Title className='lead text-danger' > <strong> {evento} </strong> </Card.Title>
                 <Card.Text >{fecha} en <i>{sala}</i></Card.Text>
                 <Card.Text className='lead text-danger' > <i>Entradas desde $ {precio}</i> </Card.Text>
                 <ItemCount data={{ stock }} />
-                <Link to={`/ItemDetail/${id}`}><Button className='m-1' variant="dark"> + Detalles </Button></Link>
-
+                <Link to={`/ItemDetail/${id}`}><Button className='m-1' variant="outline-danger"> + Detalles </Button></Link>
             </Card.Body>
-
         </Card >
 
     )

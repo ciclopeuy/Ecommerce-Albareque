@@ -30,7 +30,7 @@ const ItemListContainer = () => {
                 <h1 className='m-2 display-4 text-warning'><strong>PRÓXIMOS EVENTOS</strong>  </h1>
             </div>
             <div>
-                <ItemList1 eventos={eventos} />
+                <ItemList1 className='col-md-6' eventos={eventos} />
             </div>
 
         </>

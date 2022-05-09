@@ -9,15 +9,15 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="danger ">
       <Container>
         <Link className="Lead text-light nav-link" to="/">
-          <Navbar.Brand className="Lead" text-light   > <i>MiEntrada.uy</i></Navbar.Brand>
+          <Navbar.Brand className="Lead text-warning"   > <i>MiEntrada.uy</i></Navbar.Brand>
         </Link>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavLink className="nav-link text-light" to="/comofunciona">¿Cómo Funciona?</NavLink>
-            <Nav.Link className="nav-link text-light" href="#features">Música</Nav.Link>
-            <Nav.Link className="nav-link text-light" href="#pricing">Teatro</Nav.Link>
+            <NavLink className="nav-link text-light" to="/Musica">Música</NavLink>
+            <NavLink className="nav-link text-light" to="/Teatro">Teatro</NavLink>
 
           </Nav>
           <Nav>
