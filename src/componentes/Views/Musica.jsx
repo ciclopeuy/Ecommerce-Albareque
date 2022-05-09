@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Música = () => {
+const Musica = () => {
     return (
         <div>
             <h1 className='m-2 display-4 text-warning'><strong>Aca va el filtro de musica</strong>  </h1>
@@ -10,4 +10,4 @@ const Música = () => {
     )
 }
 
-export default Música
+export default Musica

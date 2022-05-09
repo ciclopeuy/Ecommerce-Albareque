@@ -11,8 +11,8 @@ import Carrito from '../componentes/Views/Carrito'
 import ComoFunciona from '../componentes/Views/ComoFunciona'
 import Error from '../componentes/Views/Error'
 import Home from '../componentes/Views/Home'
-import Música from '../componentes/Views/Música'
 import Teatro from '../componentes/Views/Teatro'
+import Musica from '../componentes/Views/Musica'
 
 const Rutas = () => {
     return (
@@ -26,8 +26,8 @@ const Rutas = () => {
                         <Route path='/ItemDetail/:id' element={<ItemDetailContainer />} />
                         <Route path="*" element={<Error />} />
                         <Route path='/ItemDetail/:categoria' element={<ItemlistFilter />} />
-                        <Route path='/Musica' element={<Música />} />
                         <Route path='/Teatro' element={<Teatro />} />
+                        <Route path='/Musica' element={<Musica />} />
                     </Route>
 
 
