@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import ItemList1 from '../ItemList1/itemlist1'
 import { data } from '../../config'
+import ItemList from '../ItemList/ItemList'
+
 
 const ItemListContainer = () => {
 
@@ -30,7 +31,7 @@ const ItemListContainer = () => {
                 <h1 className='m-2 display-4 text-warning'><strong>PRÓXIMOS EVENTOS</strong>  </h1>
             </div>
             <div>
-                <ItemList1 className='col-md-6' eventos={eventos} />
+                <ItemList className='col-md-6' eventos={eventos} />
             </div>
 
         </>

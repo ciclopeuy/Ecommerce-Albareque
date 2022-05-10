@@ -30,6 +30,11 @@ const ItemCount = ({ data }) => {
         }
     }
 
+    function onAdd() {
+        alert(`Agregaste ${contador} entradas`)
+
+    }
+
 
 
 
@@ -41,6 +46,8 @@ const ItemCount = ({ data }) => {
             <label className='m-3'> {contador} </label>
             <Button className='m-1' onClick={sumar} variant="dark"> + </Button>
             <p> <i>Entradas Disponibles : {stockReal}</i></p>
+            <Button className='m-1' onClick={onAdd} variant="outline-danger"> Comprar Entradas </Button>
+
 
 
         </>

@@ -3,10 +3,10 @@ import Item from '../Item/Item'
 
 
 
-const itemlist1 = ({ eventos }) => {
+const ItemList = ({ eventos }) => {
     return (
         // <dv className="card-group justify-content bg-dark p-3">
-        <div className="card-group  justify-content center container-fluid m-1 p-1">
+        <div className="row d-flex flex-column flex-md-row justify-content-center col-md-12">
 
             {eventos.length > 0 ? (
                 eventos.map((evento) => <Item
@@ -19,4 +19,4 @@ const itemlist1 = ({ eventos }) => {
     );
 };
 
-export default itemlist1;
+export default ItemList;

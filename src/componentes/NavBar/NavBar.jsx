@@ -16,8 +16,8 @@ export default function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavLink className="nav-link text-light" to="/comofunciona">¿Cómo Funciona?</NavLink>
-            <NavLink className="nav-link text-light" to="/Musica">Música</NavLink>
-            <NavLink className="nav-link text-light" to="/Teatro">Teatro</NavLink>
+            <NavLink className="nav-link text-light" to="/categoria/musica">Música</NavLink>
+            <NavLink className="nav-link text-light" to="/categoria/teatro">Teatro</NavLink>
 
           </Nav>
           <Nav>
