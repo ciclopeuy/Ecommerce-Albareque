@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto desplegado en Netlify - https://ecommerce-albarenque.netlify.app/
 
 ## Available Scripts
 
