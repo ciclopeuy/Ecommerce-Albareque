@@ -32,7 +32,7 @@ function ItemListCat() {
                     <ItemList eventos={product} />
                 </>
             ) : (
-                <h1 className="text-center">Cargando esto</h1>
+                <h1 className="text-center">Cargando...</h1>
             )}
         </>
     );

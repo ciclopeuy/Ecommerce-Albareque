@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { } from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
@@ -7,6 +7,10 @@ import ItemCount from '../ItemCount/ItemCount'
 
 
 const ItemDetail = ({ eventos }) => {
+
+
+
+
     return (
         <div className="justify-content-center">
             <h1 className='m-2 display-4 text-warning'><strong>EVENTO SELECCIONADO</strong>  </h1>
@@ -26,6 +30,8 @@ const ItemDetail = ({ eventos }) => {
 
                             <p className=" text-start lead">{eventos.descripcion}</p>
                             <h5 className="lead text-danger"> <i>Entradas desde $ {eventos.precio}</i> </h5>
+                            <hr />
+
                             <ItemCount data={{ stock: eventos.stock }} />
 
                         </div>

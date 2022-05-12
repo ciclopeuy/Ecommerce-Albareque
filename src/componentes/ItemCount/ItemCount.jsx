@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 // import { data } from '../../config';
 
 
@@ -9,8 +10,7 @@ const ItemCount = ({ data }) => {
 
     const [contador, setContador] = useState(1)
     const [stockReal, setStockReal] = useState(stock - contador)
-
-
+    const [comprar, setComprar] = useState(false)
 
 
     function sumar() {
@@ -31,29 +31,38 @@ const ItemCount = ({ data }) => {
     }
 
     function onAdd() {
-        alert(`Agregaste ${contador} entradas`)
+        console.log(`Agregaste ${contador} entradas `)
+        setComprar(true)
+    }
+
+    function volver() {
+        setComprar(false)
 
     }
 
-
-
-
-
     return (
-
         <>
-            <Button className='m-1' onClick={restar} variant="dark"> - </Button>
-            <label className='m-3'> {contador} </label>
-            <Button className='m-1' onClick={sumar} variant="dark"> + </Button>
-            <p> <i>Entradas Disponibles : {stockReal}</i></p>
-            <Button className='m-1' onClick={onAdd} variant="outline-danger"> Comprar Entradas </Button>
+            {comprar ? (
+                <>
 
+                    <h5 className="lead text-danger"> <i>{contador} entradas seleccionadas </i> </h5>
 
+                    <Link to="/cart" className='m-1' >
+                        <Button className='m-1' onClick={onAdd} variant="outline-danger"> Terminar Compra </Button>
+                    </Link>
+                    <Button className='m-1' onClick={volver} variant="outline-danger"> Cambiar cantidad </Button>
+                </>
 
+            ) :
+                <>
+                    <Button className='m-1' onClick={restar} variant="dark"> - </Button>
+                    <label className='m-3'> {contador} </label>
+                    <Button className='m-1' onClick={sumar} variant="dark"> + </Button>
+                    <p> <i>Entradas Disponibles : {stockReal}</i></p>
+                    <Button className='m-1' onClick={onAdd} variant="outline-danger">Comprar Entradas</Button>
+                </>
+            }
         </>
-
-
-
     )
 }
 
