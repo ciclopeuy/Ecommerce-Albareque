@@ -32,7 +32,7 @@ const ItemDetail = ({ eventos }) => {
                             <h5 className="lead text-danger"> <i>Entradas desde $ {eventos.precio}</i> </h5>
                             <hr />
 
-                            <ItemCount data={{ stock: eventos.stock }} />
+                            <ItemCount data={{ stock: eventos.stock, id: eventos.id, imagen: eventos.imagen, evento: eventos.evento, precio: eventos.precio, fecha: eventos.fecha, cantidad: eventos.cantidad }} />
 
                         </div>
                     </div>

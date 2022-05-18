@@ -35,7 +35,6 @@ const ItemListFilter = () => {
 
     return (
         <div className='row d-flex flex-column flex-md-row justify-content-center col-md-12'>
-
             {eventos ? eventos.map(evento => <Item data={evento} />) : <h5 className='text-warning'>Cargando Categorias Seleccionadas...</h5>}
         </div>
 
