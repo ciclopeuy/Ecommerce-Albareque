@@ -1,20 +1,18 @@
 import React, { useContext, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../Context/CartContext';
 // import { data } from '../../config';
 
 
 const ItemCount = ({ data }) => {
 
-    const { stock } = data;
+    const { stock, precio } = data;
 
     const { AddItem } = useContext(CartContext)
 
 
     const [contador, setContador] = useState(1)
     const [stockReal, setStockReal] = useState(stock - contador)
-    const [comprar, setComprar] = useState(false)
 
     function sumar() {
         if (stockReal > 0) {
@@ -34,7 +32,6 @@ const ItemCount = ({ data }) => {
     }
 
     function onAdd() {
-        console.log(`Agregaste ${contador} entradas `)
         setComprar(true)
     }
 
@@ -42,6 +39,9 @@ const ItemCount = ({ data }) => {
         setComprar(false)
 
     }
+
+    const [comprar, setComprar] = useState(false)
+
 
     return (
         <>

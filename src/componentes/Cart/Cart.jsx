@@ -1,39 +1,69 @@
-import React, { useContext } from 'react'
+import React, { useContext, } from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
-
-// const Cart = () => {
-
-//     const { carrito } = useContext(CartContext)
-
-//     return (
-//         <>
-//             {carrito.length > 0 ? carrito.map((item, index) => (
-//                 <>
-
-//                     <p> {item.cantidad} Entradas para: {item.evento} - el día {item.fecha} - Valor $ {item.precio} </p>
-//                 </>
-
-
-
-//             )) : <h1>Tu Carrito está vacio </h1>
-//             }
-//         </ >
-//     )
-// }
-
-// export default Cart
 
 
 const Cart = () => {
 
-    const { carrito, removeItem } = useContext(CartContext)
+    const { carrito, removeItem, clear } = useContext(CartContext)
+
 
     return (
-        <ul>
+        <div>
             {carrito.length > 0 ? carrito.map((item, index) => (
-                <li key={index}> {item.cantidad} entradas para: "{item.evento}" - Precio: $ {item.precio}  <button onClick={() => removeItem(item.id)}>X</button> </li>
-            )) : <h1 className="text-center" >Tu carrito está vacio </h1>}
-        </ul>
+
+                <>
+
+                    <div className="table-responsive">
+                        <table className="table bg-light">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Evento</th>
+                                    <th scope="col">Precio de la entrada</th>
+                                    <th scope="col">Remover</th>
+                                    <th scope="col">Remover Todo</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{item.cantidad}</td>
+                                    <td>{item.evento}</td>
+                                    <td>$ {item.precio} </td>
+                                    <td><button onClick={() => removeItem(item.id)}>X</button></td>
+                                    <td><button onClick={clear}>X</button></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+
+                </>
+
+
+
+
+
+                // <li key={index}> {item.cantidad} entradas para: "{item.evento}" - Precio: $ {item.precio}  <button onClick={() => removeItem(item.id)}>X</button> </li>
+            )) :
+                <>
+                    <div className='justify-content-center align-items-center'>
+                        <h1 className="text-center" >Tu carrito está vacio </h1>
+                        <Link className="Lead text-light nav-link" to="/">
+                            <button className='m-1 justify-content-center'>Volver a Comprar</button>
+                        </Link>
+
+                    </div>
+
+
+                </>
+
+            }
+        </div>
     )
 }
 

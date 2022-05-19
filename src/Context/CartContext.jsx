@@ -9,7 +9,6 @@ const GlobalProvider = ({ children }) => {
 
   const AddItem = (producto, cantidad) => {
     producto.cantidad = cantidad;
-
     setCarrito([...carrito, producto,])
   }
 
@@ -26,9 +25,8 @@ const GlobalProvider = ({ children }) => {
 
 
 
-
   return (
-    <CartContext.Provider value={{ carrito, AddItem, clear, removeItem, }}>
+    <CartContext.Provider value={{ carrito, AddItem, clear, removeItem }}>
       {children}
     </CartContext.Provider>
   )

@@ -1,22 +1,21 @@
-import React, { useContext } from 'react'
-import { CartContext } from '../../Context/CartContext'
+import React, { } from 'react'
+import { } from 'react-router-dom'
 import Cart from '../Cart/Cart'
 
 
 const Carrito = () => {
 
-    const { clear } = useContext(CartContext)
+
 
 
     return (
         <>
-            <div className='m-2 text-warning text-start'>
+            <div className='p-2 text-warning'>
                 <Cart />
             </div>
-            <div>
-                <button onClick={clear}  >Limpiar Carrito</button>
-            </div>
+
         </>
+
 
     )
 }
