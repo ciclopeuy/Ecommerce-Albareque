@@ -11,14 +11,34 @@ const GlobalProvider = ({ children }) => {
     //     setCarrito([...carrito, producto,])
     // }
 
+    // const AddItem = (producto, cantidad) => {
+    //     producto.cantidad = cantidad;
+    //     if (carrito.some(curso => curso.id === producto.id)) {
+    //         // alert("Ya tienes este evento en tu carrito")
+    //         producto.cantidad += producto.cantidad
+    //     } else {
+    //         setCarrito([...carrito, producto])
+    //     }
+    // }
+
     const AddItem = (producto, cantidad) => {
+        let existe = false;
         producto.cantidad = cantidad;
-        if (carrito.some(curso => curso.id === producto.id)) {
-            alert("Ya tienes este evento en tu carrito")
+
+        const productoFilter = carrito.map((p) => {
+            if (p.id === producto.id) {
+                p.cantidad += producto.cantidad
+                existe = true;
+            }
+            return p;
+
+        })
+        if (existe) {
+            setCarrito(productoFilter);
         } else {
-            setCarrito([...carrito, producto])
+            setCarrito([...carrito, producto]);
         }
-    }
+    };
 
 
 
