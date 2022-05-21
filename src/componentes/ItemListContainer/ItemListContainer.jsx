@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { data } from '../../config'
 import ItemList from '../ItemList/ItemList'
+import { db } from '../../service/firebase'
+import { getDocs, collection } from "firebase/firestore"
+
 
 
 const ItemListContainer = () => {
@@ -8,20 +10,37 @@ const ItemListContainer = () => {
     const [eventos, setEventos] = useState([])
 
 
+    const getData = async () => {
+
+        const col = collection(db, "productos")
+
+        try {
+            const data = await getDocs(col)
+
+            const result = data.docs.map(doc => doc = { id: doc.id, ...doc.data() })
+            setEventos(result)
+            console.log(result)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
 
     useEffect(() => {
-        const promesa = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(data)
-            }, 2000);
-        })
-        promesa.then((res) => {
-            setEventos(res)
-        }).catch((err) =>
-            console.log(err)
-        )
-        return () => {
-        }
+        getData()
+        // const promesa = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(data)
+        //     }, 2000);
+        // })
+        // promesa.then((res) => {
+        //     setEventos(res)
+        // }).catch((err) =>
+        //     console.log(err)
+        // )
+        // return () => {
+        // }
     }, [])
 
 

@@ -6,20 +6,6 @@ const GlobalProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
 
-    // const AddItem = (producto, cantidad) => {
-    //     producto.cantidad = cantidad;
-    //     setCarrito([...carrito, producto,])
-    // }
-
-    // const AddItem = (producto, cantidad) => {
-    //     producto.cantidad = cantidad;
-    //     if (carrito.some(curso => curso.id === producto.id)) {
-    //         // alert("Ya tienes este evento en tu carrito")
-    //         producto.cantidad += producto.cantidad
-    //     } else {
-    //         setCarrito([...carrito, producto])
-    //     }
-    // }
 
     const AddItem = (producto, cantidad) => {
         let existe = false;

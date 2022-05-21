@@ -5,11 +5,11 @@ import ItemCount from '../ItemCount/ItemCount'
 // import ItemCount from '../ItemCount/ItemCount'
 
 
+export const ItemDetail = (props) => {
 
-const ItemDetail = ({ eventos }) => {
+    const { id, evento, imagen, stock, precio, categoria, fecha, sala, descripcion, cantidad } = props
 
-
-
+    console.log(props.evento);
 
     return (
         <div className="justify-content-center">
@@ -17,22 +17,22 @@ const ItemDetail = ({ eventos }) => {
             <div className="card mb-2 justify-content" style={{ width: '100%' }}>
                 <div className="row g-0">
                     <div className="col-md-6">
-                        <img src={eventos.imagen} className="img-fluid rounded-start" alt="..." />
-                        <Link className='text-decoration-none' to={`/categoria/${eventos.categoria}`}>
-                            <Card.Text className=' text-light bg-danger' > {eventos.categoria} </Card.Text>
+                        <img src={imagen} className="img-fluid rounded-start" alt="..." />
+                        <Link className='text-decoration-none' to={`/categoria/${categoria}`}>
+                            <Card.Text className=' text-light bg-danger' > {categoria} </Card.Text>
                         </Link>
                     </div>
 
                     <div className="col-md-6">
                         <div className="card-body">
-                            <h5 className="display-6 text-danger">{eventos.evento}</h5>
-                            <p className="lead"> <i>{eventos.fecha} en {eventos.sala}</i> </p>
+                            <h5 className="display-6 text-danger">{evento}</h5>
+                            <p className="lead"> <i>{fecha} en {sala}</i> </p>
 
-                            <p className=" text-start lead">{eventos.descripcion}</p>
-                            <h5 className="lead text-danger"> <i>Entradas desde $ {eventos.precio}</i> </h5>
+                            <p className=" text-start lead">{descripcion}</p>
+                            <h5 className="lead text-danger"> <i>Entradas desde $ {precio}</i> </h5>
                             <hr />
 
-                            <ItemCount data={{ stock: eventos.stock, id: eventos.id, imagen: eventos.imagen, evento: eventos.evento, precio: eventos.precio, fecha: eventos.fecha, cantidad: eventos.cantidad }} />
+                            <ItemCount data={{ stock: stock, id: id, imagen: imagen, evento: evento, precio: precio, fecha: fecha, cantidad: cantidad }} />
 
                         </div>
                     </div>
