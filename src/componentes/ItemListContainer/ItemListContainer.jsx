@@ -11,12 +11,9 @@ const ItemListContainer = () => {
 
 
     const getData = async () => {
-
         const col = collection(db, "productos")
-
         try {
             const data = await getDocs(col)
-
             const result = data.docs.map(doc => doc = { id: doc.id, ...doc.data() })
             setEventos(result)
             console.log(result)
@@ -26,21 +23,8 @@ const ItemListContainer = () => {
     }
 
 
-
     useEffect(() => {
         getData()
-        // const promesa = new Promise((resolve, reject) => {
-        //     setTimeout(() => {
-        //         resolve(data)
-        //     }, 2000);
-        // })
-        // promesa.then((res) => {
-        //     setEventos(res)
-        // }).catch((err) =>
-        //     console.log(err)
-        // )
-        // return () => {
-        // }
     }, [])
 
 

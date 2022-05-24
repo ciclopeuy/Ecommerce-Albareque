@@ -5,11 +5,18 @@ import ItemCount from '../ItemCount/ItemCount'
 // import ItemCount from '../ItemCount/ItemCount'
 
 
-export const ItemDetail = (props) => {
+// export const ItemDetail = (props) => {
 
-    const { id, evento, imagen, stock, precio, categoria, fecha, sala, descripcion, cantidad } = props
+//     const { id, evento, imagen, stock, precio, categoria, fecha, sala, descripcion, cantidad } = props
 
-    console.log(props.evento);
+//     console.log(props.evento);
+
+
+export const ItemDetail = ({ eventos }) => {
+
+    const { id, evento, imagen, stock, precio, categoria, fecha, sala, descripcion, cantidad } = eventos
+
+
 
     return (
         <div className="justify-content-center">
@@ -32,7 +39,7 @@ export const ItemDetail = (props) => {
                             <h5 className="lead text-danger"> <i>Entradas desde $ {precio}</i> </h5>
                             <hr />
 
-                            <ItemCount data={{ stock: stock, id: id, imagen: imagen, evento: evento, precio: precio, fecha: fecha, cantidad: cantidad }} />
+                            <ItemCount data={{ stock, id, imagen, evento, precio, fecha, cantidad }} />
 
                         </div>
                     </div>

@@ -1,11 +1,10 @@
 import React from 'react'
 import Item from '../Item/Item'
-
+import { Spinner } from 'react-bootstrap'
 
 
 const ItemList = ({ eventos }) => {
     return (
-        // <dv className="card-group justify-content bg-dark p-3">
         <div className="row d-flex flex-column flex-md-row justify-content-center col-md-12">
 
             {eventos.length > 0 ? (
@@ -13,7 +12,9 @@ const ItemList = ({ eventos }) => {
                     data={evento}
                 />)
             ) : (
-                <h5 className='text-warning'>Cargando Eventos...</h5>
+                <Spinner animation="border" role="status" variant="primary">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
             )}
         </div >
     );

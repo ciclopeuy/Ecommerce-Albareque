@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { db } from '../../service/firebase'
-import { getDoc, doc } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
@@ -11,45 +11,23 @@ const ItemDetailContainer = () => {
     // const filtrado = data.find((eve) => eve.id === Number(id))
 
 
-    // useEffect(() => {
-    //     const promesa = new Promise((resolve, reject) => {
-    //         setTimeout(() => {
-    //             resolve(filtrado)
-    //         }, 2000);
-    //     })
-    //     promesa.then((res) => {
-    //         setEventos(res)
-    //     }).catch((err) =>
-    //         console.log(err)
-    //     )
-    //     // return () => {
-    //     // }
-    // }, [])
+    const getData = async () => {
+        const col = collection(db, "productos")
+        try {
+            const data = await getDocs(col)
+            const result = data.docs.map(doc => doc = { id: doc.id, ...doc.data() })
+            const filtrado = result.find((prod) => prod.id == id)
+            setEventos(filtrado)
+            console.log(filtrado)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     useEffect(() => {
-
-        /* 
-                getData()
-                    .then( resp => {
-                        setItem( resp.find( prod => prod.id === Number(itemId)) )
-                    })
-                    .finally(() => {
-                        setLoading(false)
-                    })  */
-
-
-        const miproducto = doc(db, 'productos', id)
-        getDoc(miproducto)
-            .then((prod) => {
-                setEventos({ id: prod.id, ...prod.data() });
-
-            }).finally(() => {
-            })
-
-
-
-    }, [id])
-
+        getData()
+    }, [])
 
 
 
