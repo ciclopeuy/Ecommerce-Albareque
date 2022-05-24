@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { db } from '../../service/firebase'
 import { collection, getDocs } from "firebase/firestore"
+import { Spinner } from 'react-bootstrap'
 
 const ItemDetailContainer = () => {
 
@@ -16,7 +17,7 @@ const ItemDetailContainer = () => {
         try {
             const data = await getDocs(col)
             const result = data.docs.map(doc => doc = { id: doc.id, ...doc.data() })
-            const filtrado = result.find((prod) => prod.id == id)
+            const filtrado = result.find((prod) => prod.id === id)
             setEventos(filtrado)
             console.log(filtrado)
         } catch (error) {
@@ -35,7 +36,9 @@ const ItemDetailContainer = () => {
     return (
 
         <div className='justify-content m-4'>
-            {eventos ? <ItemDetail eventos={eventos} /> : <h5 className='text-warning'>Cargando Evento Seleccionado...</h5>}
+            {eventos ? <ItemDetail eventos={eventos} /> : <Spinner animation="border" role="status" variant="primary">
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>}
         </div>
 
 
