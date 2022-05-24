@@ -15,6 +15,7 @@ const ItemListContainer = () => {
         try {
             const data = await getDocs(col)
             const result = data.docs.map(doc => doc = { id: doc.id, ...doc.data() })
+
             setEventos(result)
             console.log(result)
         } catch (error) {

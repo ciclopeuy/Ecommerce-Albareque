@@ -26,7 +26,7 @@ function ItemListCat() {
 
     useEffect(() => {
         getData()
-    }, [])
+    }, [categoria])
 
 
     return (

@@ -5,6 +5,9 @@ import { NavLink, Link } from "react-router-dom";
 
 
 export default function NavBar() {
+
+
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="danger ">
       <Container>
@@ -15,7 +18,6 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink className="nav-link text-light" to="/comofunciona">¿Cómo Funciona?</NavLink>
             <NavLink className="nav-link text-light" to="/categoria/musica">Música</NavLink>
             <NavLink className="nav-link text-light" to="/categoria/teatro">Teatro</NavLink>
 
