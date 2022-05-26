@@ -4,7 +4,19 @@ export const CartContext = createContext('')
 
 const GlobalProvider = ({ children }) => {
 
+
+
+
+
     const [carrito, setCarrito] = useState([])
+
+    const totalcarrito = (carrito) => {
+        let suma = 0;
+        for (let i = 0; i < carrito.length; i++) {
+            suma = suma + carrito[i].cantidad * carrito[i].precio;
+        }
+        return suma;
+    };
 
 
     const AddItem = (producto, cantidad) => {
@@ -45,7 +57,7 @@ const GlobalProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ carrito, AddItem, clear, removeItem }}>
+        <CartContext.Provider value={{ carrito, AddItem, clear, removeItem, totalcarrito }}>
             {children}
         </CartContext.Provider>
     )
