@@ -47,7 +47,8 @@ const CartDetail = () => {
                 )) :
                     <>
                         <div className='justify-content-center align-items-center'>
-                            <h5 className="display-6 text-warning">Tu carrito está vacio</h5>
+                            <h5 className="display-6 text-warning">¡Tu carrito está vacio!</h5>
+                            <img src="https://media4.giphy.com/media/RjoLWhQBFEcHS/giphy.gif?cid=ecf05e47myayo0z5ubbdvhk4wjqf0c5ovfaildim6dr5qe33&rid=giphy.gif&ct=g" alt="" />
                             <Link className="Lead text-light nav-link" to="/">
                                 <Button className='m-1' variant="outline-danger"> Volver a Comprar </Button>
                             </Link>
