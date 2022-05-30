@@ -1,65 +1,118 @@
-import React, { useContext, useState } from 'react'
-import { Button, ButtonGroup, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useState, useContext } from 'react';
+import { db } from "../../service/firebase";
+import { addDoc, collection } from "firebase/firestore";
 import { CartContext } from '../../Context/CartContext'
-import { collection, getFirestore, addDoc } from "firebase/firestore";
+import { Button, ButtonGroup, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
+
 
 
 const Formulario = () => {
 
-    const { clear, carrito, totalcarrito } = useContext(CartContext)
 
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
-    const [nombre, setNombre] = useState("");
-    const [OrderId, SetOrderId] = useState("")
 
-    const handleInput = (e) => {
-        switch (e.target.name) {
-            case "phone":
-                setPhone(e.target.value);
-                break;
-            case "email":
-                setEmail(e.target.value);
-                break;
-            case "nombre":
-                setNombre(e.target.value);
-                break;
-            default:
-                break;
+
+
+    const {
+        carrito,
+        clear
+    } = useContext(CartContext);
+
+
+
+
+
+    const [orderID, setOrderID] = useState();
+    function mostrarOrder(order) {
+        if (order) {
+            window.alert("Gracias por tu compra, tu numero de orden es => " + orderID)
         }
-    };
-
-
-    const sendOrder = () => {
-        console.log("hola");
-        const order = {
-            buyer: { name: { nombre }, phone: { phone }, email: { email } },
-            items: [{ carrito }],
-            total: { totalcarrito }
-        };
-
-        const db = getFirestore();
-        const ordersCollection = collection(db, "orders");
-
-        addDoc(ordersCollection, order).then(({ id }) => SetOrderId(id));
-
 
     }
 
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormulario({
+            ...formulario,
+            buyer: {
+                ...formulario.buyer,
+                [id]: value,
+            },
+        });
+    };
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault();
+        try {
+            const oCollection = collection(db, "orders");
+            console.log(formulario);
+            await addDoc(oCollection, formulario).then(({ id }) => setOrderID(id));
+
+
+            clear();
+
+        } catch (error) {
+            console.log(error)
+        }
+
+
+    };
+    const itemsCart = carrito.map(({ id, evento, precio, cantidad }) => ({
+        id,
+        evento,
+        precio,
+        cantidad,
+    }));
+
+
+    const [formulario, setFormulario] = useState({
+        buyer: {
+            name: "",
+            phone: "",
+            email: "",
+
+        },
+        items: itemsCart,
+        date: Date(),
+
+    });
+
+    useEffect(() => {
+
+        mostrarOrder(orderID);
+
+        return () => {
+
+        }
+    }, [orderID])
+
+
+
     return (
-
-
-        <Form className="needs-validation" id="form" noValidate onSubmit={sendOrder}>
+        <Form className="g-3 form needs-validation" onSubmit={handleSubmit} id="form">
             <h5 className="display-6 text-danger">Datos del Comprador</h5>
-            <div class="mb-3">
-                <input type="text" class="form-control" onChange={handleInput} id="nombre" placeholder="Ingresa tu nombre" />
+            <div className="col-md-12 mb-3">
+                {/* <label className="form-label">Nombre</label> */}
+                <input type="text" className="form-control" id="name" placeholder="Ingresa tu nombre" onChange={handleChange} required />
+                <div className="invalid-feedback">
+                    Ingrese su nombre
+                </div>
             </div>
-            <div class="mb-3">
-                <input type="email" class="form-control" onChange={handleInput} id="email" placeholder="Ingresa tu E-mail" />
+            <div className="col-md-12 mb-3">
+                {/* <label className="form-label">Teléfono</label> */}
+                <input type="text" className="form-control" id="phone" placeholder="Ingresa tu Telefono" onChange={handleChange} required />
+                <div className="invalid-feedback">
+                    Ingrese su teléfono
+                </div>
             </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" onChange={handleInput} id="phone" placeholder="Ingresa tu Teléfono de contacto" />
+            <div className="col-md-12 mb-3">
+                {/* <label className="form-label">Email</label> */}
+                <input type="text" className="form-control" id="email" aria-describedby="inputGroupPrepend" placeholder="Ingresa tu e-mail" onChange={handleChange} required />
+                <div className="invalid-feedback">
+                    Ingrese su email
+                </div>
             </div>
 
             <ButtonGroup >
@@ -70,8 +123,6 @@ const Formulario = () => {
                 <Button onClick={clear} className='m-1' variant="danger"> Vaciar Carrito </Button>
             </ButtonGroup>
         </Form>
-
-
     )
 }
 
