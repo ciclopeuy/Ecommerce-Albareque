@@ -1,5 +1,14 @@
 Proyecto Final Cursada 31155 - Iván Albarenque
 
+El proyecto final emula una ticketera que vende entradas para eventos con tres categorías: Música, Teatro y Deportes.
+Al cargar, se ven los tres tipos de eventos que se pueden filtrar desde la seccion Categorias ubicada en el NavBar o desde la propia Card donde se muestra dicha categoria.
+
+Una vez seleccionado un evento, podemos acceder a el clickeando +Detalles donde el mismo despliega mas información y la posibilidad de agregar al carrito la cantidad de entradas deseadas para dicho evento.
+
+Ya en el carrito podemos cargar los datos del comprador y finalizar la orden de compra.
+
+Puede ver el proyecto fuincionando en: https://ecommerce-albarenque.netlify.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
