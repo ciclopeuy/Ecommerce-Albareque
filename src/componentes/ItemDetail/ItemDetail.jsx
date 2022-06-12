@@ -2,21 +2,11 @@ import React, { } from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
-// import ItemCount from '../ItemCount/ItemCount'
-
-
-// export const ItemDetail = (props) => {
-
-//     const { id, evento, imagen, stock, precio, categoria, fecha, sala, descripcion, cantidad } = props
-
-//     console.log(props.evento);
 
 
 export const ItemDetail = ({ eventos }) => {
 
     const { id, evento, imagen, stock, precio, categoria, fecha, sala, descripcion, cantidad } = eventos
-
-
 
     return (
         <div className="justify-content-center">

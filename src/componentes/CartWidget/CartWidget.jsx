@@ -3,9 +3,6 @@ import { FiShoppingCart } from "react-icons/fi";
 import { CartContext } from '../../Context/CartContext';
 
 
-
-
-
 const CartWidget = () => {
 
     const { carrito } = useContext(CartContext)
@@ -14,10 +11,9 @@ const CartWidget = () => {
         <>
             <div className="d-flex justify-content-center align-items-center" >
                 <FiShoppingCart style={{ color: "white" }} />
-                <h6 className="Lead text-warning">{carrito.length}</h6>
+                <h6 className="Lead text-warning  m-2">{carrito.length}</h6>
             </div>
         </>
-
     )
 }
 

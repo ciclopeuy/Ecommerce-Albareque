@@ -1,12 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Cart from '../componentes/Cart/Cart'
 import ItemDetailContainer from '../componentes/ItemDetailContainer/ItemDetailContainer'
 import ItemListCat from '../componentes/ItemList/ItemListCat'
+import ItemListContainer from '../componentes/ItemListContainer/ItemListContainer'
 import Layout from '../componentes/Layout/Layout'
-import Carrito from '../componentes/Views/Carrito'
-import ComoFunciona from '../componentes/Views/ComoFunciona'
-import Error from '../componentes/Views/Error'
-import Home from '../componentes/Views/Home'
+import Error from '../componentes/Error/Error'
 
 
 const Rutas = () => {
@@ -15,16 +14,12 @@ const Rutas = () => {
             <BrowserRouter>
                 <Routes>
                     <Route Index element={<Layout />}>
-                        <Route index element={<Home />} />
-                        <Route path='/cart' element={<Carrito />} />
-                        <Route path='/comofunciona' element={<ComoFunciona />} />
+                        <Route index element={<ItemListContainer />} />
+                        <Route path='/cart' element={<Cart />} />
                         <Route path='/ItemDetail/:id' element={<ItemDetailContainer />} />
                         <Route path="*" element={<Error />} />
                         <Route path='/categoria/:categoria' element={<ItemListCat />} />
                     </Route>
-
-
-
                 </Routes>
             </BrowserRouter>
 

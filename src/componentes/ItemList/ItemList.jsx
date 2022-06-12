@@ -5,7 +5,7 @@ import { Spinner } from 'react-bootstrap'
 
 const ItemList = ({ eventos }) => {
     return (
-        <div className="row d-flex flex-column flex-md-row justify-content-center col-md-12">
+        <div className="row d-flex flex-column flex-md-row mx-auto col-md-12">
 
             {eventos.length > 0 ? (
                 eventos.map((evento) => <Item

@@ -3,16 +3,10 @@ import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
 
-// import { data } from '../../config';
-
-
 const ItemCount = ({ data }) => {
 
     const { stock } = data;
-
     const { AddItem } = useContext(CartContext)
-
-
     const [contador, setContador] = useState(1)
     const [stockReal, setStockReal] = useState(stock - contador)
 

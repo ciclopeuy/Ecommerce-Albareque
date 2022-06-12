@@ -7,28 +7,18 @@ import { Button, ButtonGroup, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
 
-
 const Formulario = () => {
-
-
-
-
 
     const {
         carrito,
         clear
     } = useContext(CartContext);
 
-
-
-
-
     const [orderID, setOrderID] = useState();
     function mostrarOrder(order) {
         if (order) {
             window.alert("Gracias por tu compra, tu numero de orden es => " + orderID)
         }
-
     }
 
     const handleChange = (e) => {
@@ -49,15 +39,10 @@ const Formulario = () => {
             const oCollection = collection(db, "orders");
             console.log(formulario);
             await addDoc(oCollection, formulario).then(({ id }) => setOrderID(id));
-
-
             clear();
-
         } catch (error) {
             console.log(error)
         }
-
-
     };
     const itemsCart = carrito.map(({ id, evento, precio, cantidad }) => ({
         id,
@@ -65,7 +50,6 @@ const Formulario = () => {
         precio,
         cantidad,
     }));
-
 
     const [formulario, setFormulario] = useState({
         buyer: {
@@ -87,8 +71,6 @@ const Formulario = () => {
 
         }
     }, [orderID])
-
-
 
     return (
         <Form className="g-3 form needs-validation" onSubmit={handleSubmit} id="form">

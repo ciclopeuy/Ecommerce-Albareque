@@ -5,6 +5,7 @@ import { CartContext } from '../../Context/CartContext'
 import Formulario from '../Formulario/Formulario'
 import CartDetail from './CartDetail'
 
+
 const Cart = () => {
 
     const { carrito } = useContext(CartContext)
@@ -39,13 +40,8 @@ const Cart = () => {
                     <CartDetail />
                     <h5 className="display-6 text-danger text-align-right">Total a pagar: $ {total}</h5>
                 </div>
-
             </div>
-
-
             :
-
-
             <div className="container col col-12 col-md-7 my-4 py-2 bg-dark">
                 <CartDetail />
             </div>
@@ -54,4 +50,3 @@ const Cart = () => {
 }
 
 export default Cart
-

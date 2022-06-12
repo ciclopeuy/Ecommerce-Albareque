@@ -5,12 +5,11 @@ import { db } from '../../service/firebase'
 import { collection, getDocs } from "firebase/firestore"
 import { Spinner } from 'react-bootstrap'
 
+
 const ItemDetailContainer = () => {
 
     const { id } = useParams();
     const [eventos, setEventos] = useState(null);
-    // const filtrado = data.find((eve) => eve.id === Number(id))
-
 
     const getData = async () => {
         const col = collection(db, "productos")
@@ -25,13 +24,9 @@ const ItemDetailContainer = () => {
         }
     }
 
-
     useEffect(() => {
         getData()
     }, [])
-
-
-
 
     return (
 
@@ -40,8 +35,6 @@ const ItemDetailContainer = () => {
                 <span className="visually-hidden">Loading...</span>
             </Spinner>}
         </div>
-
-
     );
 
 };
