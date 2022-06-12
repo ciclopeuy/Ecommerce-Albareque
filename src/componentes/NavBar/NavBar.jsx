@@ -7,7 +7,7 @@ import { NavLink, Link } from "react-router-dom";
 export default function NavBar() {
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="danger ">
+    <Navbar className="sticky-top" collapseOnSelect expand="lg" bg="danger ">
       <Container>
         <Link className="Lead text-light nav-link" to="/">
           <Navbar.Brand className="Lead text-warning"   > <i>MiEntrada.uy</i></Navbar.Brand>
