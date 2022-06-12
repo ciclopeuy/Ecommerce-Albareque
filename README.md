@@ -7,7 +7,8 @@ Una vez seleccionado un evento, podemos acceder a el clickeando +Detalles donde 
 
 Ya en el carrito podemos cargar los datos del comprador y finalizar la orden de compra.
 
-Puede ver el proyecto fuincionando en: https://ecommerce-albarenque.netlify.app/
+Puede ver el proyecto fuincionando en Netlify aqui: https://ecommerce-albarenque.netlify.app/
+Puede ver un video aqui: https://youtu.be/VNIOOoH4ymA
 
 # Getting Started with Create React App
 
