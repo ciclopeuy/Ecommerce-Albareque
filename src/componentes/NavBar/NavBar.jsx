@@ -22,9 +22,11 @@ export default function NavBar() {
                 Seleccione la Categoría
               </Dropdown.Toggle>
               <Dropdown.Menu>
+                <Dropdown.Item ><NavLink className="nav-link" to="/">Ver todo</NavLink></Dropdown.Item>
                 <Dropdown.Item ><NavLink className="nav-link" to="/categoria/musica">Música</NavLink></Dropdown.Item>
                 <Dropdown.Item ><NavLink className="nav-link" to="/categoria/teatro">Teatro</NavLink></Dropdown.Item>
                 <Dropdown.Item ><NavLink className="nav-link" to="/categoria/deportes">Deportes</NavLink></Dropdown.Item>
+
               </Dropdown.Menu>
             </Dropdown>
             <NavLink className="nav-link" to="/cart"><CartWidget /></NavLink>

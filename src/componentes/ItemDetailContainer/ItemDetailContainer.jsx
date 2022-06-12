@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
     return (
 
         <div className='justify-content m-4'>
-            {eventos ? <ItemDetail eventos={eventos} /> : <Spinner animation="border" role="status" variant="primary">
+            {eventos ? <ItemDetail eventos={eventos} /> : <Spinner animation="grow" role="status" variant="warning">
                 <span className="visually-hidden">Loading...</span>
             </Spinner>}
         </div>

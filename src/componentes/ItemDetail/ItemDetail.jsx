@@ -9,7 +9,7 @@ export const ItemDetail = ({ eventos }) => {
     const { id, evento, imagen, stock, precio, categoria, fecha, sala, descripcion, cantidad } = eventos
 
     return (
-        <div className="justify-content-center">
+        <div className="justify-content-center mx-auto col-md-10">
             <h1 className='m-2 display-4 text-warning'><strong>EVENTO SELECCIONADO</strong>  </h1>
             <div className="card mb-2 justify-content" style={{ width: '100%' }}>
                 <div className="row g-0">

@@ -32,7 +32,7 @@ const Cart = () => {
     return (
 
         carrito.length > 0 ?
-            <div className="row">
+            <div className="row mx-auto col-10">
                 <div className="container col col-12 my-5 py-2 col-md-4 bg-light">
                     <Formulario />
                 </div>
