@@ -43,7 +43,4 @@ function ItemListCat() {
     )
 }
 
-
-
-
 export default ItemListCat;

@@ -29,14 +29,13 @@ const ItemCount = ({ data }) => {
 
     function onAdd() {
         setComprar(true)
+        AddItem(data, contador)
     }
 
-    function volver() {
-        setComprar(false)
 
-    }
 
     const [comprar, setComprar] = useState(false)
+
 
 
     return (
@@ -47,9 +46,12 @@ const ItemCount = ({ data }) => {
                     <h5 className="lead text-danger"> <i>{contador} entradas seleccionadas </i> </h5>
 
                     <Link to="/cart" className='m-1' >
-                        <Button className='m-1' onClick={() => AddItem(data, contador)} variant="outline-danger"> Terminar Compra </Button>
+                        <Button className='m-1' variant="outline-danger">Ir al Carrito</Button>
                     </Link>
-                    <Button className='m-1' onClick={volver} variant="outline-danger"> Cambiar cantidad </Button>
+                    <Link to="/" className='m-1' >
+                        <Button className='m-1' variant="outline-danger"> Seguir Comprando</Button>
+                    </Link>
+
                 </>
 
             ) :
@@ -58,7 +60,13 @@ const ItemCount = ({ data }) => {
                     <label className='m-3'> {contador} </label>
                     <Button className='m-1' onClick={sumar} variant="dark"> + </Button>
                     <p> <i>Entradas Disponibles : {stockReal}</i></p>
-                    <Button className='m-1' onClick={onAdd} variant="outline-danger">Comprar Entradas</Button>
+                    {/* <Link to="/cart" className='m-1' > */}
+                    <Button className='m-1' onClick={onAdd} variant="outline-danger"> Agregar al carrito </Button>
+                    {/* </Link> */}
+                    <Link to="/" className='m-1' >
+                        <Button className='m-1' variant="outline-danger"> Seguir Comprando</Button>
+                    </Link>
+
                 </>
             }
         </>
